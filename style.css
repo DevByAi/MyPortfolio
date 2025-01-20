@@ -287,6 +287,9 @@ nav a.active {
     .projects {
         padding: 2rem 0;  /* הקטנת פדינג */
     }
+    .image-container { /* הנח שהמסגרת של התמונה נמצאת בתוך אלמנט עם מחלקה זו */
+        display: none; /* מסתיר את התמונה */
+    }
 }
 @media (max-width: 480px) {
     .hero h1 {
@@ -901,6 +904,8 @@ footer::before {
     color: rgba(255, 255, 255, 0.6);
     font-size: 0.9rem;
 }
+
+/* הגדרת אנימציה */
 @keyframes fadeInUp {
     from {
         opacity: 0; /* שקיפות 0 בהתחלה */
@@ -911,14 +916,18 @@ footer::before {
         transform: translateY(0); /* חזרה למיקום המקורי */
     }
 }
+
 .project-card {
     animation: fadeInUp 0.6s ease-in-out; /* הוספת האנימציה לכרטיסיות */
 }
+
+/* מדיה קוורי עבור מכשירים עם רוחב מקסימלי של 768px */
 @media (max-width: 768px) {
     .projects-grid {
         grid-template-columns: 1fr; /* עמודה אחת במסכים קטנים */
         gap: 1.5rem; /* רווחים בין הכרטיסיות */
     }
+
     .project-card {
         max-width: 90%; /* צמצום הרוחב למראה טוב יותר */
         margin: 0 auto; /* מרכז את הכרטיסיה */
@@ -927,33 +936,42 @@ footer::before {
         overflow: hidden; /* להבטיח שהתוכן לא ייצא מהכרטיסיה */
         padding: 1rem; /* ריווח פנימי */
     }
+
     .project-card img {
         width: 100%; /* רוחב מלא */
         height: auto; /* גובה אוטומטי */
         border-top-left-radius: 10px; /* פינות מעוגלות בתמונה */
         border-top-right-radius: 10px; /* פינות מעוגלות בתמונה */
     }
+
     .project-content {
         text-align: center; /* מרכז את התוכן */
         padding: 1rem; /* ריווח פנימי */
     }
+
     .project-content h3 {
         font-size: 1.3rem; /* גודל גופן לכותרת */
     }
+
     .project-content p {
         font-size: 1rem; /* גודל גופן לפסקה */
         color: #64748b; /* צבע לפסקה */
     }
+
     .tags {
         justify-content: center; /* מרכז את התגים */
     }
 }
+
 .nav-links {
     display: none; /* התפריט מוסתר כברירת מחדל */
 }
+
 .nav-links.active {
     display: block; /* התפריט מוצג כאשר הוא פעיל */
 }
+
+/* הוסף את הסגנון הזה כדי להציג את התפריט במצב מחשב */
 @media (min-width: 769px) {
     .nav-links {
         display: flex; /* או block, תלוי במבנה שלך */
