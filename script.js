@@ -88,19 +88,16 @@ menuButton.addEventListener('click', () => {
     navLinks.classList.toggle('active'); // הוספת או הסרת מחלקת active
     if (navLinks.classList.contains('active')) {
         document.body.style.overflow = 'hidden'; // חוסם גלילה כאשר התפריט פתוח
-        menuButton.style.display = 'none'; // מסתיר את כפתור התפריט
     } else {
         document.body.style.overflow = 'auto'; // מאפשר גלילה כאשר התפריט סגור
-        menuButton.style.display = 'block'; // מציג את כפתור התפריט
     }
 });
 
 // הוספת אירוע לחיצה על קישורים בתפריט
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
-        navLinks.classList.remove('active'); // הסרת מחלקת active מהקישורים
+        navLinks.classList.remove('active'); // הסרת מחלקת active מהתפריט
         document.body.style.overflow = 'auto'; // מאפשר גלילה
-        menuButton.style.display = 'block'; // מציג את כפתור התפריט
     });
 });
 
