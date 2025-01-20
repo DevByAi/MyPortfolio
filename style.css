@@ -303,6 +303,21 @@ nav a.active {
     .social-links {
         justify-content: center;
     }
+    .project-description {
+        position: static; /* מיקום סטטי */
+        background: #f8fafc; /* צבע רקע */
+        color: #333; /* צבע טקסט */
+        padding: 1rem; /* ריווח פנימי */
+        border-radius: 10px; /* פינות מעוגלות */
+    }
+    .project-description h4 {
+        font-size: 1.2rem; /* גודל גופן לכותרת */
+        color: #0ea5e9; /* צבע לכותרת */
+    }
+    .project-description p {
+        font-size: 1rem; /* גודל גופן לפסקה */
+        line-height: 1.5; /* גובה שורה */
+    }
 }
 .mobile-message {
     display: none;
@@ -544,7 +559,7 @@ nav a.active {
     }
 }
 .menu-button {
-    display: none;
+    display: block;
     background: #0ea5e9;
     color: white;
     border: none;
@@ -660,15 +675,18 @@ nav a.active {
 .project-card {
     position: relative;
     background: white;
-    border-radius: 1rem;
-    overflow: visible;
+    border-radius: 8px;
+    overflow: hidden;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    height: 400px;
+    transition: all 0.3s ease-in-out;
+    height: auto;
+    min-height: 350px;
     margin-bottom: 1rem;
     display: flex;
     flex-direction: column;
     padding-bottom: 3.5rem;
+    border: 1px solid #ccc;
+    animation: fadeInUp 0.6s ease-in-out;
 }
 .project-description {
     position: absolute;
@@ -687,6 +705,9 @@ nav a.active {
     justify-content: flex-start;
     backdrop-filter: blur(3px);
     border-radius: 1rem;
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 1rem;
 }
 .project-description h4 {
     font-size: 1.5rem;
@@ -705,31 +726,29 @@ nav a.active {
     margin-bottom: 2rem;
 }
 .project-card .learn-more {
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
+    display: block;
+    text-align: center;
     background: #0ea5e9;
-    color: white;
-    padding: 0.75rem 1.5rem;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
     border-radius: 0.5rem;
+    transition: all 0.3s ease-in-out;
     text-decoration: none;
-    transition: all 0.4s ease-in-out;
-    z-index: 10;
-    opacity: 0;
-    visibility: hidden;
+    margin-top: 1rem;
 }
-.project-card:hover .learn-more {
-    transform: translateX(-50%);
-    opacity: 1;
-    visibility: visible;
+.project-card .learn-more:hover {
+    background: #0284c7;
 }
 .project-card:hover .project-description {
     opacity: 1;
     visibility: visible;
 }
-.project-card .learn-more:hover {
-    background: #38bdf8;
+@media (max-width: 480px) {
+    .project-card .learn-more {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.2rem;
+    }
 }
 .project-content h3 {
     font-size: 1.25rem;
@@ -771,6 +790,13 @@ nav a.active {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+}
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.project-card:active {
+    transform: scale(0.98);
 }
 footer {
     background: #1f2937;
@@ -874,4 +900,77 @@ footer::before {
 .footer-bottom p {
     color: rgba(255, 255, 255, 0.6);
     font-size: 0.9rem;
+}
+
+/* הגדרת אנימציה */
+@keyframes fadeInUp {
+    from {
+        opacity: 0; /* שקיפות 0 בהתחלה */
+        transform: translateY(20px); /* הזזה כלפי מטה */
+    }
+    to {
+        opacity: 1; /* שקיפות 1 בסוף */
+        transform: translateY(0); /* חזרה למיקום המקורי */
+    }
+}
+
+.project-card {
+    animation: fadeInUp 0.6s ease-in-out; /* הוספת האנימציה לכרטיסיות */
+}
+
+/* מדיה קוורי עבור מכשירים עם רוחב מקסימלי של 768px */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr; /* עמודה אחת במסכים קטנים */
+        gap: 1.5rem; /* רווחים בין הכרטיסיות */
+    }
+
+    .project-card {
+        max-width: 90%; /* צמצום הרוחב למראה טוב יותר */
+        margin: 0 auto; /* מרכז את הכרטיסיה */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* צל */
+        border-radius: 10px; /* פינות מעוגלות */
+        overflow: hidden; /* להבטיח שהתוכן לא ייצא מהכרטיסיה */
+        padding: 1rem; /* ריווח פנימי */
+    }
+
+    .project-card img {
+        width: 100%; /* רוחב מלא */
+        height: auto; /* גובה אוטומטי */
+        border-top-left-radius: 10px; /* פינות מעוגלות בתמונה */
+        border-top-right-radius: 10px; /* פינות מעוגלות בתמונה */
+    }
+
+    .project-content {
+        text-align: center; /* מרכז את התוכן */
+        padding: 1rem; /* ריווח פנימי */
+    }
+
+    .project-content h3 {
+        font-size: 1.3rem; /* גודל גופן לכותרת */
+    }
+
+    .project-content p {
+        font-size: 1rem; /* גודל גופן לפסקה */
+        color: #64748b; /* צבע לפסקה */
+    }
+
+    .tags {
+        justify-content: center; /* מרכז את התגים */
+    }
+}
+
+.nav-links {
+    display: none; /* התפריט מוסתר כברירת מחדל */
+}
+
+.nav-links.active {
+    display: block; /* התפריט מוצג כאשר הוא פעיל */
+}
+
+/* הוסף את הסגנון הזה כדי להציג את התפריט במצב מחשב */
+@media (min-width: 769px) {
+    .nav-links {
+        display: flex; /* או block, תלוי במבנה שלך */
+    }
 }
