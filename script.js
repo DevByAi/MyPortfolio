@@ -14,6 +14,10 @@ const observer = new IntersectionObserver((entries) => {
     });
 });
 window.addEventListener('scroll', () => {
+    if (navLinks.classList.contains('active')) {
+        document.querySelector('.menu-button').classList.remove('active');
+        navLinks.classList.remove('active');
+    }
     const header = document.querySelector('header');
     if (window.scrollY > 100) {
         header.classList.add('scrolled');
@@ -21,7 +25,8 @@ window.addEventListener('scroll', () => {
         header.classList.remove('scrolled');
     }
 });
-document.querySelectorAll('.project-card').forEach((card, index) => {
+const projectCards = document.querySelectorAll('.project-card');
+projectCards.forEach(card => {
     observer.observe(card);
 });
 
@@ -78,23 +83,40 @@ function scrollToFooter() {
 const menuButton = document.querySelector('.menu-button');
 const navLinks = document.querySelector('.nav-links');
 
-menuButton.addEventListener('click', (event) => {
-    menuButton.classList.toggle('active');
-    navLinks.classList.toggle('active');
+// הוספת אירוע לחיצה על כפתור התפריט
+menuButton.addEventListener('click', () => {
+    navLinks.classList.toggle('active'); // הוספת או הסרת מחלקת active
+    if (navLinks.classList.contains('active')) {
+        document.body.style.overflow = 'hidden'; // חוסם גלילה כאשר התפריט פתוח
+        menuButton.style.display = 'none'; // מסתיר את כפתור התפריט
+    } else {
+        document.body.style.overflow = 'auto'; // מאפשר גלילה כאשר התפריט סגור
+        menuButton.style.display = 'block'; // מציג את כפתור התפריט
+    }
 });
 
-// סגירת התפריט בלחיצה על קישור
+// הוספת אירוע לחיצה על קישורים בתפריט
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
-        menuButton.classList.remove('active');
-        navLinks.classList.remove('active');
+        navLinks.classList.remove('active'); // הסרת מחלקת active מהקישורים
+        document.body.style.overflow = 'auto'; // מאפשר גלילה
+        menuButton.style.display = 'block'; // מציג את כפתור התפריט
     });
 });
 
-// סגירת התפריט בגלילה
-window.addEventListener('scroll', () => {
-    if (navLinks.classList.contains('active')) {
-        menuButton.classList.remove('active');
-        navLinks.classList.remove('active');
+// פונקציה להסתיר את כפתור התפריט במצב מחשב
+function updateMenuButtonVisibility() {
+    if (window.innerWidth > 768) {
+        menuButton.style.display = 'none'; // מסתיר את כפתור התפריט במצב מחשב
+        navLinks.classList.remove('active'); // מסיר את מחלקת active מהתפריט
+        document.body.style.overflow = 'auto'; // מאפשר גלילה
+    } else {
+        menuButton.style.display = 'block'; // מציג את כפתור התפריט במצב נייד
     }
-}); 
+}
+
+// קורא לפונקציה בעת טעינת הדף
+updateMenuButtonVisibility();
+
+// מאזין לשינויי גודל חלון
+window.addEventListener('resize', updateMenuButtonVisibility);
