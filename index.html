@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תיק עבודות - פרויקטי AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="pic/logo.png" alt="הלוגו של האתר" class="site-logo">
+                <span class="logo-text">AI Portfolio</span>
+            </div>
+            <div class="mobile-message">לחוויה נעימה מומלץ לגלוש באתר דרך המחשב</div>
+            <button class="menu-button">תפריט</button>
+            <ul class="nav-links">
+                <li><a href="#home">דף הבית</a></li>
+                <li><a href="#about">אודות</a></li>
+                <li><a href="#projects">פרויקטים</a></li>
+                <li><a href="#footer">צור קשר</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>פרויקטי בינה מלאכותית<br><span>ופיתוח תוכנה</span></h1>
+            <p>מציג פתרונות חדשניים בתחום הבינה המלאכותית ופיתוח האתרים</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="primary-btn">צפה בפרויקטים</a>
+                <a href="https://github.com/DevByAi" target="_blank" rel="noopener noreferrer" class="secondary-btn">GitHub <span class="github-icon">↗</span></a>
+                <button class="secondary-btn" onclick="scrollToFooter()">צור קשר</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="pic/main.webp" alt="תמונת רקע של הירו" class="hero-img">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>מי אני</h2>
+                    <p class="lead">מפתח בינה מלאכותית ופתרונות תוכנה חדשניים</p>
+                    <p>
+                        אני מתמחה בפיתוח פתרונות AI מתקדמים ואפליקציות web חכמות. 
+                        עם ניסיון של מספר שנים בתחום, אני מתמקד ביצירת פתרונות שמשלבים
+                        טכנולוגיות מתקדמות עם ממשק משתמש נוח ואינטואיטיבי.
+                    </p>
+                    <div class="skills">
+                        <h3>התמחויות</h3>
+                        <div class="skill-tags">
+                            <span>בינה מלאכותית</span>
+                            <span>html</span>
+                            <span>css</span>
+                            <span>javascript</span>
+                        </div>
+                    </div>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">פרויקטים</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">חברים מרוצים</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2+</span>
+                            <span class="stat-label">שנות ניסיון</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="pic/me.jpeg" alt="תמונת פרופיל">
+                    <div class="image-decoration"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>הפרויקטים שלי</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="pic/calcoletor.webp" alt="Project 1">
+                <div class="project-content">
+                    <h3>ConversionCalculator</h3>
+                    <p>מחשבון המרות</p>
+                    <div class="tags">
+                        <span>html</span>
+                        <span>css</span>
+                        <span>javascript</span>
+                    </div>
+                </div>
+                <div class="project-description">
+                    <h4>ConversionCalculator</h4>
+                    <p>מחשבון המרות זה מאפשר למשתמשים להמיר בין יחידות זמן, פורמטים של שעות 
+                        (AM/PM) ומידות בגדים. הממשק נועד להיות ידידותי ונגיש לקהל הישראלי.
+                    </p>
+                    <div class="tech-stack">
+                        טכנולוגיות: html, css, javascript
+                    </div>
+                </div>
+                <a href="https://devbyai.github.io/ConversionCalculator/" class="learn-more" target="_blank" rel="noopener noreferrer">למד עוד</a>
+            </div>
+
+            <div class="project-card">
+                <img src="pic/hafoch-li.webp" alt="Project 2">
+                <div class="project-content">
+                    <h3>hafuch-li</h3>
+                    <p>גרסת ווב להמרת טקסט הפוך בעברית</p>
+                    <div class="tags">
+                        <span>html</span>
+                        <span>css</span>
+                        <span>javascript</span>
+                    </div>
+                </div>
+                <div class="project-description">
+                    <h4>hafuch-li</h4>
+                    <p>גרסת ווב להמרת טקסט הפוך בעברית, בהשראת תוכנת "הפוך על הפוך".
+                         מיועד במיוחד למשתמשי מק, לינוקס ומובייל.
+                    </p>
+                    <div class="tech-stack">
+                        טכנולוגיות: html, css, javascript
+                    </div>
+                </div>
+                <a href="https://devbyai.github.io/hafuch-li/" class="learn-more" target="_blank" rel="noopener noreferrer">למד עוד</a>
+            </div>
+            <div class="project-card">
+                <img src="pic/qr.webp" alt="QR-Create">
+                
+                <div class="project-content">
+                    <h3>QR-Create</h3>
+                    <p>יוצר וסורק קוד  QR </p>
+                    <div class="tags">
+                        <span>html</span>
+                        <span>css</span>
+                        <span>javascript</span>
+                    </div>
+                </div>
+
+                <div class="project-description">
+                    <h4> QR Create </h4>
+                    <p>
+                        כאן תוכלו ליצור ולסרוק קודי קיו אר, כמובן עם היסטוריה נוחה לקודים שיצרתם וסרקתם.                          
+                    </p>
+                    <div class="tech-stack">
+                        טכנולוגיות: html, css, javascript
+                    </div>
+                </div>
+
+                <a href="https://devbyai.github.io/QR-Create/" class="learn-more" target="_blank" rel="noopener noreferrer">למד עוד</a>
+            </div>
+
+            <div class="project-card">
+                <img src="pic/secure.webp" alt="SecurePass">
+                <div class="project-content">
+                    <h3>SecurePass</h3>
+                    <p>יוצר ובודק סיסמאות בטוחות</p>
+                    <div class="tags">
+                        <span>html</span>
+                        <span>css</span>
+                        <span>javascript</span>
+                    </div>
+                </div>
+                <div class="project-description">
+                    <h4>SecurePass</h4>
+                    <p>
+                        בחלק של יצירת סיסמא, המשתמש יכול ליצור סיסמא בטוחה על פי קריטריונים שהוא בוחר. 
+                        בחלק של בדיקת הסיסמא המשתמש מדביק סיסמא כלשהי והאתר מחזיר תשובה 
+                        עד כמה היא בטוחה וכמה זמן משוער יקח לפרוץ אותה.
+                    </p>
+                    <div class="tech-stack">
+                        טכנולוגיות: html, css, javascript
+                    </div>
+                </div>
+                <a href="https://devbyai.github.io/SecurePass-/" class="learn-more" target="_blank" rel="noopener noreferrer">למד עוד</a>
+            </div>
+
+            <div class="project-card">
+                <img src="pic/clear.webp" alt="ClearCode">
+                <div class="project-content">
+                    <h3>ClearCode</h3>
+                    <p>מוחק כל סוגי ההערות והשורות הריקות בקוד תכנות</p>
+                    <div class="tags">
+                        <span>html</span>
+                        <span>css</span>
+                        <span>javascript</span>
+                    </div>
+                </div>
+                <div class="project-description">
+                    <h4>ClearCode</h4>
+                    <p>
+                        גם אתכם מעצבן שיש כל מיני הערות בקוד? 
+                        קבלו את הכלי החדש שמזהה ההערות ושורות ריקות בקוד 
+                        ופשוט מצמצם אותם כמה שהוא מסוגל בהתאם למה שאתם דורשים ממנו.
+                    </p>
+                    <div class="tech-stack">
+                        טכנולוגיות: html, css, javascript
+                    </div>
+                </div>
+                <a href="https://devbyai.github.io/ClearCode/" class="learn-more" target="_blank" rel="noopener noreferrer">למד עוד</a>
+            </div>
+
+            <div class="project-card">
+                <img src="pic/LuckMaster.webp" alt="LuckMaster">
+                <div class="project-content">
+                    <h3>LuckMaster</h3>
+                    <p>כלי שיוצר הגרלות</p>
+                    <div class="tags">
+                        <span>html</span>
+                        <span>css</span>
+                        <span>javascript</span>
+                    </div>
+                </div>
+                <div class="project-description">
+                    <h4>LuckMaster</h4>
+                    <p>
+                        יש וויכוח מי יעשה משימה מסוימת? או וויכוח מי יקבל צופר מסוים?
+                        קבלו את הכלי שיעשה את העבודה המעצבנת במקומכם.
+                        הכלי כולל אפשרות להעלאת קובץ CSV מוכן, כך שלא תצטרכו להקליד שמות מחדש,
+                        וכן שמירה של היסטוריית הגרלות למעקב קל ונוח.
+                    </p>
+                    <div class="tech-stack">
+                        טכנולוגיות: html, css, javascript
+                    </div>
+                </div>
+                <a href="https://devbyai.github.io/LuckMaster/" class="learn-more" target="_blank" rel="noopener noreferrer">למד עוד</a>
+            </div>
+
+            <div class="project-card">
+                <img src="pic/pmodro.webp" alt="TimeMaster">
+                <div class="project-content">
+                    <h3>TimeMaster</h3>
+                    <p>שעון פמודורו</p>
+                    <div class="tags">
+                        <span>html</span>
+                        <span>css</span>
+                        <span>javascript</span>
+                        <span>json</span>
+                    </div>
+                </div>
+                <div class="project-description">
+                    <h4>TimeMaster</h4>
+                    <p>
+                        מכירים את השיטה של שעון פמודורו? זה בדיוק מה שזה, 
+                        עם הגדרות שניתן להגדיר כמה זמן למשימה וכמה זמן להפסקה, 
+                        במידה ואתם צריכים זמנים שונים.
+                    </p>
+                    <div class="tech-stack">
+                        טכנולוגיות: html, css, javascript, json
+                    </div>
+                </div>
+                <a href="https://devbyai.github.io/TimeMaster/" class="learn-more" target="_blank" rel="noopener noreferrer">למד עוד</a>
+            </div>
+
+            <div class="project-card idea-card">
+                <div class="project-content">
+                    <img src="pic/your idea.webp" alt="your idea">
+                    <h3>כאן יכול להיות הרעיון שלך</h3>
+                    <p>יש לך רעיון מעניין? בוא נהפוך אותו למציאות!</p>
+                    <div class="tags">
+                        <span>חדשנות</span>
+                        <span>יצירתיות</span>
+                        <span>פיתוח</span>
+                    </div>
+                    <a href="#footer" class="learn-more">צור קשר</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2>שאלות נפוצות</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>איך אני יכול להתחיל פרויקט איתך?</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>רוצה להתחיל פרויקט איתי?
+                            פשוט צור קשר דרך המייל שמופיע למטה! לאחר שנשוחח ואבין את צרכי הפרויקט, אציג לך את החזון שלי ואת הדרך שבה ניתן להפוך אותו למציאות. ברגע שניישר קו – נוכל להתחיל בעבודה וליצור משהו מדהים יחד.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>כמה זמן לוקח לפתח פרויקט AI?</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>בגלל שאני משתמש הכל על טהרת הבינה המלאכותית , אני מספק פרויקטים מהירים ומוצלחים בזמן קצר ובמחיר מספק , כל עוד שאין לי עוד עומס, זהו פרויקט התנדבותי , אקח ממכם תשלום רק כדי לשלם על השרת ועל הפעלת הרובוטים שלי</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>האם אתה מספק תמיכה לאחר השקת הפרויקט?</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>כן, אני מספק תמיכה טכנית ותחזוקה שוטפת לכל הפרויקטים שלי למשך חודש לאחר ההשקה.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>האם האתר שהינך בונה הוא בטוח לשימוש ?</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>בהחלט! אני מקפיד להשתמש בכלים ושיטות עדכניות כדי להבטיח שהפרויקטים יהיו מאובטחים ויציבים. בנוסף, כל הקוד זמין באופן פומבי ב-GitHub, כך שכל אחד יכול לעיין בו ולהבין בדיוק איך הכל עובד, מה שמאפשר שקיפות מלאה וביטחון בשימוש באתר.
+                            
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>באילו טכנולוגיות אתה משתמש?</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>בגלל שאני משתמש בבינה מלאכותית , אני משתדל למקד כל פרויקט ב3 שפות , שאותם מכיר ויודע איך הם עובדות </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>בנימה אישית, מה הרעיון מאחורי הפרויקט הזה?</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>לאחר הצבא התחלתי ללמוד הנדסאי תוכנה, אך פרשתי כי זה לא התאים לי. בתחילת הלימודים שאלתי את המרצה מה לדעתו יקרה למתכנתים עם הכניסה של הבינה המלאכותית לעולם. תשובתו הייתה ש<strong>AI יעזור למתכנתים טובים, אבל יחליף את הפחות טובים.</strong>
+                            היום אני מוכיח שבינה מלאכותית יכולה לעשות הכל – <strong>את כל הפרויקטים והאתר שלי, כולל הקוד והתמונות, יצרתי בעזרת AI בלבד, בלי שום ידע בתכנות.</strong>
+                            זה מוכיח שכל אחד, עם הכלים הנכונים, יכול להפוך רעיון למציאות.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>צור קשר</h3>
+                <a href="mailto:devbyai495@gmail.com" class="email-link">
+                    <span>📧</span>
+                    devbyai495@gmail.com
+                </a>
+            
+            </div>
+            <div class="footer-section">
+                <h3>רשתות חברתיות</h3>
+                <div class="social-links">
+                 
+                    <a href="https://github.com/DevByAi" target="_blank" rel="noopener noreferrer">GitHub</a>
+                 
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>אודות</h3>
+                <p>תיק עבודות המציג את הפרויקטים שלי בתחום הבינה המלאכותית</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 כל הזכויות שמורות</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
